@@ -3,11 +3,35 @@ import House from '../House/House';
 import { Link } from 'react-router-dom';
 
 class Dashboard extends Component {
-    state = {  }
+    constructor() {
+        super();
+
+        this.state = {
+            houseList: [
+                {
+                    id: 1,
+                    name: 'test'
+                }
+            ]
+        }
+    }
+
+    getHouses = () => {
+        return this.state.houseList.map(house => {
+            return (
+                <House 
+                    name={house.name}
+                />
+            
+            )
+        }) 
+    }
+
+
     render() { 
         return ( 
-            <div>I don't know what I'm doing
-                <House />
+            <div>
+                {this.getHouses()}
                 <Link to="/wizard"><button className="add-new-property">Add New Property</button></Link>
             </div>
          );

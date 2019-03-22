@@ -20,10 +20,9 @@ massive(DATABASE_CONNECTION).then(dbInstance => {
 });
 
 
+
 //endpoints
-app.get('/', function (req, res) {
-    res.send('Hello there! I am a cute lil server!');
-});
+app.get(`/api/houselist`, controller.getHouseList)
 
 
 //Listen to port 5000

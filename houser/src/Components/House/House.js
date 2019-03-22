@@ -1,7 +1,7 @@
 import React from 'react';
 
 function House(props){
-    return <div>Header</div>
+    return <div>{props.name}</div>
 }
 
 
