@@ -24,7 +24,7 @@ massive(DATABASE_CONNECTION, {scripts: '../db'}).then(dbInstance => {
 //endpoints
 app.get(`/api/houselist`, controller.getHouseList)
 
-// app.post(`/api/houseinfo`, controller.getHouseInfo)
+app.post(`/api/houseinfo`, controller.getHouseInfo)
 
 
 //Listen to port 5000

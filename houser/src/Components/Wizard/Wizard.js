@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class Wizard extends Component {
     constructor(props) {
@@ -45,6 +46,15 @@ class Wizard extends Component {
       }
 
 
+
+      getHouseInfo = () => {
+        axios.post(`/api/houseinfo`).then(response => {
+            console.log(response)
+            this.setState({
+                houseList: response.data
+            })
+        })
+    }
 
 
     render() { 
